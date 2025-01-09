@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Imagen clicable para ir atrás -->
+    <ImageView
+        android:id="@+id/btnAtras7"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/atras"
+        android:clickable="true"
+        android:onClick="metodo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/etTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cambio pañal"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/btnAtras7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Sección seleccionar desechos -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaDesechos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+
+        <!-- Icono pis -->
+        <ImageView
+            android:id="@+id/btnPis"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/pis"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/imagen_borde"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnCaca"
+            android:layout_marginEnd="20dp"/>
+
+        <!-- Etiqueta pis -->
+        <TextView
+            android:id="@+id/etPis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pis"
+            android:textSize="18sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/btnPis"
+            app:layout_constraintStart_toStartOf="@id/btnPis"
+            app:layout_constraintEnd_toEndOf="@id/btnPis"
+            />
+
+        <!-- Icono Caca -->
+        <ImageView
+            android:id="@+id/btnCaca"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/caca"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/imagen_borde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="20dp"/>
+
+        <!-- Etiqueta Caca -->
+        <TextView
+            android:id="@+id/etCaca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="Caca"
+            app:layout_constraintEnd_toEndOf="@id/btnCaca"
+            app:layout_constraintStart_toStartOf="@id/btnCaca"
+            app:layout_constraintTop_toBottomOf="@id/btnCaca" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Sección Inicio y fin -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaInicio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/filaDesechos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+        <!-- Botón Empezar -->
+
+        <Button
+            android:id="@+id/btnEmpPanal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Actual"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/panalFH"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!-- Selector fecha y hora -->
+        <EditText
+            android:id="@+id/panalFH"
+            android:layout_width="220dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp"
+            android:focusable="false"
+            android:hint="Fecha y hora"
+            android:padding="10dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.899"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Etiqueta comentarios -->
+    <TextView
+        android:id="@+id/etComent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Comentarios"
+        android:textSize="18sp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filaInicio" />
+
+    <!-- Campo para ingresar los comentarios -->
+    <EditText
+        android:id="@+id/campoPanal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etComent" />
+
+    <!-- Botón para guardar -->
+    <Button
+        android:id="@+id/btnGuardarPanal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:text="Guardar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campoPanal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

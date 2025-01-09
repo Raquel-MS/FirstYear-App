@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Imagen clicable para ir atrás -->
+    <ImageView
+        android:id="@+id/btnAtras11"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/atras"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Botón atrás"/>
+
+    <!-- Título Registros -->
+    <TextView
+        android:id="@+id/etRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Registros"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnAtras11"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Sección iconos clicables de categorías -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/secIconos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/etRegistro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Icono pecho -->
+        <ImageView
+            android:id="@+id/btnRPecho"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:padding="8dp"
+            android:background="@drawable/imagen_borde"
+            android:clickable="true"
+            android:contentDescription="Botón pecho"
+            android:onClick="metodo"
+            android:src="@drawable/pecho_derecho"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Icono pañal -->
+        <ImageView
+            android:id="@+id/btnRPanal"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="8dp"
+            android:layout_marginStart="14dp"
+            android:background="@drawable/imagen_borde"
+            android:clickable="true"
+            android:contentDescription="Botón pañal"
+            android:onClick="metodo"
+            android:src="@drawable/panal"
+            app:layout_constraintStart_toEndOf="@id/btnRPecho"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!-- Icono sueño -->
+        <ImageView
+            android:id="@+id/btnRSueno"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="8dp"
+            android:layout_marginStart="14dp"
+            android:background="@drawable/imagen_borde"
+            android:clickable="true"
+            android:contentDescription="Botón sueño"
+            android:onClick="metodo"
+            android:src="@drawable/sueno"
+            app:layout_constraintStart_toEndOf="@id/btnRPanal"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!-- Icono biberón -->
+        <ImageView
+            android:id="@+id/btnRBibe"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="8dp"
+            android:layout_marginStart="14dp"
+            android:background="@drawable/imagen_borde"
+            android:clickable="true"
+            android:contentDescription="Botón biberón"
+            android:onClick="metodo"
+            android:src="@drawable/biberon"
+            app:layout_constraintStart_toEndOf="@id/btnRSueno"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!-- Icono desarrollo -->
+        <ImageView
+            android:id="@+id/btnRDes"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/imagen_borde"
+            android:clickable="true"
+            android:contentDescription="Botón hitos de desarrollo"
+            android:onClick="metodo"
+            android:padding="8dp"
+            android:src="@drawable/desarrollo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnRBibe"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/vistaRegistros"
+        android:layout_width="359dp"
+        android:layout_height="496dp"
+        android:padding="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnEliminar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secIconos">
+
+        <TableLayout
+            android:id="@+id/layoutListadoRegistros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableRow
+                android:id="@+id/filaCabeceraListado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3sp">
+
+                <TextView
+                    android:id="@+id/item1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/item2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/item3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:pointerIcon="wait"
+                    android:text=""
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/item4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textAlignment="center" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+
+
+
+        <!-- Botón Eliminar -->
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:text="Eliminar"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vistaRegistros"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_firstyear_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_firstyear_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FirstYearApp"
+        tools:targetApi="31">
+        <activity
+            android:name=".activity_bibe"
+            android:exported="false" />
+        <activity
+            android:name=".activity_panal"
+            android:exported="false" />
+        <activity
+            android:name=".activity_des"
+            android:exported="false" />
+        <activity
+            android:name=".activity_sueno"
+            android:exported="false" />
+        <activity
+            android:name=".activity_seleccion_bebe"
+            android:exported="false" />
+        <activity
+            android:name=".activityLM"
+            android:exported="false" />
+        <activity
+            android:name=".activityAnadirBebe"
+            android:exported="false" />
+        <activity
+            android:name=".activityInicioSesion"
+            android:exported="false" />
+        <activity
+            android:name=".activity_selecciona"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRegistros"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

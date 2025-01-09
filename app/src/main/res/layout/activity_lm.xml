@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Imagen clicable para ir atrás -->
+    <ImageView
+        android:id="@+id/btnAtras6"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/atras"
+        android:clickable="true"
+        android:onClick="metodo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Título Lactancia materna -->
+    <TextView
+        android:id="@+id/etTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lactancia materna"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/btnAtras6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Sección seleccionar pecho -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaPechos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+
+        <!-- Icono izquierda -->
+        <ImageView
+            android:id="@+id/btnIzq"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/pecho_izquierdo"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/imagen_borde"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnDer"
+            android:layout_marginEnd="20dp"/>
+
+        <!-- Etiqueta izquierda -->
+        <TextView
+            android:id="@+id/etIzq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Izquierdo"
+            android:textSize="18sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/btnIzq"
+            app:layout_constraintStart_toStartOf="@id/btnIzq"
+            app:layout_constraintEnd_toEndOf="@id/btnIzq"/>
+
+        <!-- Icono derecha -->
+        <ImageView
+            android:id="@+id/btnDer"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/pecho_derecho"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/imagen_borde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="20dp"/>
+
+        <!-- Etiqueta derecha -->
+        <TextView
+            android:id="@+id/etDer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="Derecho"
+            app:layout_constraintEnd_toEndOf="@id/btnDer"
+            app:layout_constraintStart_toStartOf="@id/btnDer"
+            app:layout_constraintTop_toBottomOf="@id/btnDer" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Sección Inicio y fin -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaInicio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/filaPechos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+
+        <!-- Botón empezar -->
+        <Button
+            android:id="@+id/btnEmpLM"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="Empezar"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Selector fecha y hora empezar-->
+        <EditText
+            android:id="@+id/empLMFH"
+            android:layout_width="222dp"
+            android:layout_height="45dp"
+            android:focusable="false"
+            android:hint="Fecha y hora"
+            android:padding="10dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnEmpLM"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaFin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/filaInicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+
+        <!-- Botón terminar -->
+        <Button
+            android:id="@+id/btnTermLM"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="Terminar"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Selector fecha y hora terminar-->
+        <EditText
+            android:id="@+id/termLMFH"
+            android:layout_width="222dp"
+            android:layout_height="45dp"
+            android:focusable="false"
+            android:hint="Fecha y hora"
+            android:padding="10dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnTermLM"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Etiqueta comentarios -->
+    <TextView
+        android:id="@+id/etComent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:padding="8dp"
+        android:text="Comentarios"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filaFin" />
+
+    <!-- Campo para ingresar los comentarios -->
+    <EditText
+        android:id="@+id/campoLM"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etComent" />
+
+    <!-- Botón guardar -->
+    <Button
+        android:id="@+id/btnGuardarLM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:text="Guardar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campoLM" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

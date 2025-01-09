@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FirstYearApp</string>
+
+    //Texto desplegable
+    <string name="frase_rol">Selecciona un rol</string>
+
+    // opciones para desplegable rol
+    <string-array name="opciones_rol">
+        <item>Madre</item>
+        <item>Padre</item>
+        <item>Familiar</item>
+        <item>Cuidador/a</item>
+    </string-array>
+
+</resources>

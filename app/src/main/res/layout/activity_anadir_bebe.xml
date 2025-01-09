@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Imagen clicable para ir atrás -->
+    <ImageView
+        android:id="@+id/btnAtras4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/atras"
+        android:clickable="true"
+        android:onClick="metodo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Título añadir Bebé -->
+    <TextView
+        android:id="@+id/etAnadirBebe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añadir bebé"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/btnAtras4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Sección iconos clicables de género -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaGenero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etAnadirBebe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <!-- Icono femenino -->
+        <ImageView
+            android:id="@+id/btnFem"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/femenino"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/imagen_borde"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnMasc"
+            android:layout_marginEnd="20dp"/>
+
+        <!-- Etiqueta femenino -->
+        <TextView
+            android:id="@+id/etFem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Femenino"
+            android:textSize="18sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/btnFem"
+            app:layout_constraintStart_toStartOf="@id/btnFem"
+            app:layout_constraintEnd_toEndOf="@id/btnFem"/>
+
+        <!-- Icono masculino -->
+        <ImageView
+            android:id="@+id/btnMasc"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/masculino"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/imagen_borde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="25dp"/>
+
+        <!-- Etiqueta masculino -->
+        <TextView
+            android:id="@+id/etMasc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="Masculino"
+            app:layout_constraintEnd_toEndOf="@id/btnMasc"
+            app:layout_constraintStart_toStartOf="@id/btnMasc"
+            app:layout_constraintTop_toBottomOf="@id/btnMasc" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Etiqueta Nombre -->
+    <TextView
+        android:id="@+id/etNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:padding="3dp"
+        android:text="Nombre"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filaGenero" />
+
+    <!-- Campo para ingresar el nombre -->
+    <EditText
+        android:id="@+id/campoNombreBebe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:hint="Ingrese el nombre del bebé"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNombre" />
+
+    <!-- Etiqueta Fecha nacimiento -->
+    <TextView
+        android:id="@+id/etFNac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:text="Fecha de nacimiento"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/campoNombreBebe" />
+
+    <!-- Campo para seleccionar la fecha de nacimiento -->
+    <EditText
+        android:id="@+id/campoFNac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:hint="Selecciona la fecha de nacimiento"
+        android:padding="10dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etFNac" />
+
+    <!-- Etiqueta Rol -->
+    <TextView
+        android:id="@+id/etRol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:text="Rol"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/campoFNac" />
+
+    <!-- Selecctor de rol -->
+    <Spinner
+        android:id="@+id/selectorRol"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:prompt="@string/frase_rol"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etRol" />
+
+    <!-- Botón para guardar -->
+    <Button
+        android:id="@+id/btnGBebe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="18dp"
+        android:text="Guardar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectorRol" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+

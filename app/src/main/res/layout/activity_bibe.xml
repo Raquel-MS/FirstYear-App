@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Imagen clicable para ir atrás -->
+    <ImageView
+        android:id="@+id/btnAtras9"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/atras"
+        android:clickable="true"
+        android:onClick="metodo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Título biberón -->
+    <TextView
+        android:id="@+id/etTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biberón"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/btnAtras9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Sección seleccionar alimento -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaAlimento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+
+        <!-- Icono leche materna -->
+        <ImageView
+            android:id="@+id/btnLecheM"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/pecho_derecho"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/imagen_borde"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnForm"
+            android:layout_marginEnd="20dp"/>
+
+        <!-- Etiqueta leche materna -->
+        <TextView
+            android:id="@+id/etLecheM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leche materna"
+            android:textSize="18sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/btnLecheM"
+            app:layout_constraintStart_toStartOf="@id/btnLecheM"
+            app:layout_constraintEnd_toEndOf="@id/btnLecheM"
+            />
+
+        <!-- Icono fórmula -->
+        <ImageView
+            android:id="@+id/btnForm"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/formula"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/imagen_borde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="20dp"/>
+
+        <!-- Etiqueta fórmula -->
+        <TextView
+            android:id="@+id/etForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="Fórmula"
+            app:layout_constraintEnd_toEndOf="@id/btnForm"
+            app:layout_constraintStart_toStartOf="@id/btnForm"
+            app:layout_constraintTop_toBottomOf="@id/btnForm" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Sección Inicio y fin -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaInicio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/filaAlimento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+
+        <!-- Botón Empezar -->
+        <Button
+            android:id="@+id/btnEmpBibe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="Empezar"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Selector fecha y hora -->
+        <EditText
+            android:id="@+id/empBibeFH"
+            android:layout_width="222dp"
+            android:layout_height="45dp"
+            android:focusable="false"
+            android:hint="Fecha y hora"
+            android:padding="10dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnEmpBibe"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaFin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/filaInicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+
+        <!-- Botón Terminar -->
+        <Button
+            android:id="@+id/btnTermBibe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="Terminar"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Selector fecha y hora -->
+        <EditText
+            android:id="@+id/termBibeFH"
+            android:layout_width="222dp"
+            android:layout_height="45dp"
+            android:focusable="false"
+            android:hint="Fecha y hora"
+            android:padding="10dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnTermBibe"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filaCantidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/filaFin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+        <!-- Etiqueta cantidad -->
+        <TextView
+            android:id="@+id/etCant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Cantidad (ml)"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Campo para ingresar la cantidad de leche -->
+        <EditText
+            android:id="@+id/campoCant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/etCant"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Etiqueta comentarios -->
+    <TextView
+        android:id="@+id/etComent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:padding="8dp"
+        android:text="Comentarios"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filaCantidad" />
+
+    <!-- Campo para ingresar los comentarios -->
+    <EditText
+        android:id="@+id/campoBibe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etComent" />
+
+    <!-- Botón para guardar -->
+    <Button
+        android:id="@+id/btnGuardarBibe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:text="Guardar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/campoBibe" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
